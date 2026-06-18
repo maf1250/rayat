@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة شروحات رايات</title>
+    <title>مكتبة رايات</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-    <h1>مكتبة شروحات رايات</h1>
+<header class="hero">
+
+    <h1>مكتبة رايات</h1>
+
+    <p>
+        شروحات وبرامج وأدوات نظام رايات
+    </p>
 
     <input
         type="text"
         id="searchInput"
-        placeholder="ابحث عن فيديو..."
+        placeholder="ابحث عن مقطع"
     >
 
-    <div id="categoryButtons"></div>
 </header>
+
+<section id="categoryButtons"></section>
 
 <main>
     <div id="videos"></div>

@@ -18,7 +18,7 @@ function getCategory(title){
     if(/رزمة|تسجيل/i.test(title))
         return "التسجيل والرزم";
 
-    if(/شعبة|جدول|القاعات|موازنة/i.test(title))
+    if(/شعبة|شعب|جدول|جداول|الجدول|الجداول|القاعات|موازنة/i.test(title))
         return "الجداول والشعب";
 
     if(/طلب|طباعة|السجل الأكاديمي|سلفة|حسم/i.test(title))
@@ -30,10 +30,10 @@ function getCategory(title){
     if(/اكسل|Excel|برنامج|استيراد|تصدير|أداة/i.test(title))
         return "البرامج والأدوات";
 
-    if(/حل مشكلة|مشاكل/i.test(title))
+    if(/مشكلة|مشاكل|حلول|حل/i.test(title))
         return "المشاكل والحلول";
 
-    if(/صلاحيات|تفعيل/i.test(title))
+    if(/صلاحيات|صلاحية|تفعيل/i.test(title))
         return "الصلاحيات والإعدادات";
 
     if(/أتمتة|مساعد آلي/i.test(title))

@@ -55,17 +55,28 @@ async function loadVideos(pageToken = ""){
     const response = await fetch(url);
     const data = await response.json();
 
-    data.items.forEach(item => {
+data.items.forEach(item => {
 
-        allVideos.push({
-            title:item.snippet.title,
-            thumbnail:item.snippet.thumbnails.medium.url,
-            videoId:item.snippet.resourceId.videoId,
-            category:getCategory(item.snippet.title)
-        });
+    if (
+        !item.snippet ||
+        !item.snippet.resourceId ||
+        !item.snippet.thumbnails
+    ) {
+        return;
+    }
 
+    allVideos.push({
+        title: item.snippet.title,
+        thumbnail:
+            item.snippet.thumbnails.high?.url ||
+            item.snippet.thumbnails.medium?.url ||
+            item.snippet.thumbnails.default?.url ||
+            "",
+        videoId: item.snippet.resourceId.videoId,
+        category: getCategory(item.snippet.title)
     });
 
+});
     if(data.nextPageToken){
         await loadVideos(data.nextPageToken);
     }

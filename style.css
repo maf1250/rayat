@@ -97,19 +97,18 @@ body{
     z-index:100;
 
     display:flex;
-    flex-wrap:nowrap;
     justify-content:center;
-    gap:10px;
+    flex-wrap:wrap;
+    gap:8px;
 
-    padding:18px;
+    padding:10px 16px;
 
-    background:rgba(248,251,253,.85);
+    background:rgba(248,251,253,.88);
     backdrop-filter:blur(14px);
-
+    transition:transform .3s ease;
     border-bottom:1px solid #EDF2F7;
 
-    box-shadow:
-        0 8px 20px rgba(15,23,42,.04);
+    box-shadow:0 6px 18px rgba(15,23,42,.04);
 }
 
 #categoryButtons::-webkit-scrollbar{
@@ -124,7 +123,8 @@ body{
     color:#3A7CA5;
     border:1px solid #E3EEF5;
     border-radius:30px;
-    padding:12px 18px;
+     padding:8px 14px;
+    font-size:14px;
     margin:5px;
     cursor:pointer;
     transition:.25s;
@@ -243,6 +243,11 @@ main{
     .category-btn{
         font-size:14px;
         padding:10px 14px;
+    }
+
+
+    #categoryButtons.hide{
+        transform:translateY(-100%);
     }
 
 }

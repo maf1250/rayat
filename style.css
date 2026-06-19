@@ -2,26 +2,31 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     font-family:'Cairo',sans-serif;
-    background:#fafcfb;
+    background:#F8FBFD;
+    color:#1F2937;
 }
 
 .hero{
     position: relative;
     overflow: hidden;
 
-    background: linear-gradient(
-        135deg,
-        #f7fcf9 0%,
-        #eef9f2 45%,
-        #f9fcfa 100%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #fbfdff 0%,
+            #f3fbff 45%,
+            #f8fcff 100%
+        );
 
-    color: #1d3b2a;
-    text-align: center;
-    padding: 80px 20px;
+    text-align:center;
+    padding:90px 20px;
 }
 
 .hero::before{
@@ -34,10 +39,10 @@ body{
     top:-180px;
     right:-120px;
 
-    background:rgba(0,166,90,.08);
+    background:rgba(105,208,255,.10);
     border-radius:50%;
 
-    filter:blur(90px);
+    filter:blur(120px);
 }
 
 .hero::after{
@@ -48,56 +53,95 @@ body{
     height:350px;
 
     bottom:-120px;
-    left:-80px;
+    left:-100px;
 
-    background:rgba(0,166,90,.05);
+    background:rgba(140,230,255,.12);
     border-radius:50%;
 
-    filter:blur(80px);
+    filter:blur(100px);
 }
 
 .hero h1{
-    color:#006C35;
-    font-size:42px;
-    font-weight:700;
+    position:relative;
+    z-index:1;
+
+    font-size:56px;
+    font-weight:800;
+    letter-spacing:-1px;
+
+    color:#1E293B;
 }
 
 .hero p{
-    color:#5c7062;
+    position:relative;
+    z-index:1;
+
+    color:#6B7280;
+    font-size:18px;
 }
 
 #searchInput{
+    position:relative;
+    z-index:1;
+
     width:100%;
-    max-width:600px;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    margin-top:20px;
+    max-width:650px;
+
+    padding:18px 22px;
+
+    border:1px solid #E5EEF5;
+    outline:none;
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+}
+
+#searchInput:focus{
+    box-shadow:
+        0 0 0 4px rgba(105,208,255,.15),
+        0 10px 30px rgba(0,0,0,.06);
 }
 
 #categoryButtons{
-    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    padding:18px;
     text-align:center;
+
+    background:rgba(248,251,253,.85);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid #EDF2F7;
+
+    box-shadow:
+        0 8px 20px rgba(15,23,42,.04);
 }
 
 .category-btn{
     background:white;
-    color:#006C35;
-    border:1px solid #DDE7E0;
+    color:#3A7CA5;
+    border:1px solid #E3EEF5;
     border-radius:30px;
     padding:12px 18px;
     margin:5px;
     cursor:pointer;
-    transition:.2s;
+    transition:.25s;
 }
 
 .category-btn:hover{
-    background:#006C35;
+    background:#3A7CA5;
     color:white;
 }
 
 main{
-    padding:25px;
+    max-width:1500px;
+    margin:auto;
+    padding:30px;
 }
 
 #videos{
@@ -108,18 +152,33 @@ main{
 
 .card{
     background:white;
-    border-top:4px solid #006C35;
-    border-radius:18px;
+    border-radius:22px;
     overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    cursor:pointer;
+    box-shadow:
+        0 8px 30px rgba(15,23,42,.06);
+        display:flex;
+    flex-direction:column;
+    transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(15,23,42,.10);
+}
+
+.card:hover img{
+    transform:scale(1.03);
 }
 
 .card img{
     width:100%;
+    display:block;
+    transition:.4s;
+    aspect-ratio:16/9;
+    object-fit:cover;
 }
 
 .card-content{
@@ -128,14 +187,51 @@ main{
 
 .card h3{
     font-size:17px;
+    line-height:1.8;
+    margin-top:0;
+    margin-bottom:12px;
+
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .category{
     color:#777;
 }
+
+.category-btn.active{
+
+    background:linear-gradient(
+        135deg,
+        #7EB7D8,
+        #5B8DB8
+    );
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(91,141,184,.25);
+}
+
 .notice{
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:12px;
-    max-Width: 240px;
+    position:relative;
+    z-index:1;
+
+    max-width:700px;
+    margin:25px auto 0;
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:16px;
+
+    color:#4B5563;
+    line-height:1.8;
 }

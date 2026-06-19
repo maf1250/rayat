@@ -12,6 +12,9 @@ function getCategory(title){
     if(/مشكلة|مشاكل|حلول|حل/i.test(title))
         return "المشاكل والحلول";
 
+    if(/اكسل|Excel|asc|برنامج|استيراد|أكسل|إكسل|تصدير|ملف|برامج|معرف|المكون|مكون/i.test(title))
+        return "البرامج المساعدة";
+    
     if(/ورش|ورشة/i.test(title))
         return "ورش العمل";
 
@@ -33,10 +36,7 @@ function getCategory(title){
     if(/التدقيق|تقارير|تقرير|تدقيق/i.test(title))
         return "التقارير والمتابعة";
 
-    if(/اكسل|Excel|asc|برنامج|استيراد|أكسل|إكسل|تصدير|ملف|برامج|معرف|المكون|مكون/i.test(title))
-        return "البرامج المساعدة";
-
-       if(/صلاحيات|صلاحية|تفعيل/i.test(title))
+    if(/صلاحيات|صلاحية|تفعيل/i.test(title))
         return "الصلاحيات والإعدادات";
 
     return "أخرى";

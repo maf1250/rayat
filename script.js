@@ -58,9 +58,10 @@ async function loadVideos(pageToken = ""){
 data.items.forEach(item => {
 
     if (
-        !item.snippet ||
-        !item.snippet.resourceId ||
-        !item.snippet.thumbnails
+    !item.snippet ||
+    !item.snippet.resourceId ||
+    !item.snippet.resourceId.videoId ||
+    !item.snippet.thumbnails
     ) {
         return;
     }

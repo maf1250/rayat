@@ -27,7 +27,7 @@ body{
 
     text-align:center;
 
-    padding:30px 20px 25px;
+    padding:20px 20px 25px;
 }
 
 
@@ -62,14 +62,19 @@ body{
     font-size:32px;
     font-weight:800;
 
-    margin:0 0 8px;
+    color:#1E293B;
+
+    margin:0;
 }
 
 .hero p{
-    margin:0 0 20px;
+    position:relative;
+    z-index:1;
 
-    font-size:15px;
     color:#6B7280;
+    font-size:15px;
+
+    margin:8px 0 18px;
 }
 
 #searchInput{

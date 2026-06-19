@@ -73,15 +73,13 @@ body{
 
     color:#6B7280;
     font-size:15px;
-
     margin:8px 0 18px;
 }
 
 #searchInput{
     max-width:550px;
-
     padding:14px 20px;
-
+    margin-top: 15px
     border-radius:16px;
 }
 

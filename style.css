@@ -5,7 +5,7 @@
 body{
     margin:0;
     font-family:'Cairo',sans-serif;
-    background:#f5f7fb;
+    background:#F3F6F4;
 }
 
 .hero{
@@ -46,12 +46,18 @@ body{
 
 .category-btn{
     background:white;
-    border:none;
+    color:#006C35;
+    border:1px solid #DDE7E0;
     border-radius:30px;
     padding:12px 18px;
     margin:5px;
     cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    transition:.2s;
+}
+
+.category-btn:hover{
+    background:#006C35;
+    color:white;
 }
 
 main{
@@ -66,10 +72,10 @@ main{
 
 .card{
     background:white;
+    border-top:4px solid #006C35;
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
-    transition:.3s;
 }
 
 .card:hover{
@@ -90,4 +96,9 @@ main{
 
 .category{
     color:#777;
+}
+.notice{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:12px;
 }

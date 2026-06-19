@@ -64,17 +64,24 @@ data.items.forEach(item => {
     ) {
         return;
     }
+const title = item.snippet.title.toLowerCase();
 
-    allVideos.push({
-        title: item.snippet.title,
-        thumbnail:
-            item.snippet.thumbnails.high?.url ||
-            item.snippet.thumbnails.medium?.url ||
-            item.snippet.thumbnails.default?.url ||
-            "",
-        videoId: item.snippet.resourceId.videoId,
-        category: getCategory(item.snippet.title)
-    });
+if (
+    title.includes("private video") ||
+    title.includes("deleted video")
+){
+    return;
+}
+   allVideos.push({
+    title: item.snippet.title,
+    thumbnail:
+        item.snippet.thumbnails.high?.url ||
+        item.snippet.thumbnails.medium?.url ||
+        item.snippet.thumbnails.default?.url ||
+        "",
+    videoId: item.snippet.resourceId.videoId,
+    category: getCategory(item.snippet.title)
+});
 
 });
     if(data.nextPageToken){

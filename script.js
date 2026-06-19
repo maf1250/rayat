@@ -118,30 +118,33 @@ function createButtons(){
 
 function changeCategory(category){
     currentCategory = category;
+    document.getElementById("searchInput").value = "";
     document.getElementById("categoryButtons").innerHTML = "";
     createButtons();
     renderVideos();
 }
 
 function renderVideos(){
-
-    const search =
-        document.getElementById("searchInput")
+    const search = document
+        .getElementById("searchInput")
         .value
-        .toLowerCase();
-
+        .toLowerCase()
+        .trim();
     const container = document.getElementById("videos");
-
     container.innerHTML = "";
-
-    let videos = allVideos.filter(v =>
-        v.title.toLowerCase().includes(search)
-    );
-
-    if(currentCategory !== "الكل"){
-        videos = videos.filter(v =>
-            v.category === currentCategory
+    let videos;
+    if(search){
+        videos = allVideos.filter(v =>
+            v.title.toLowerCase().includes(search)
         );
+    }
+    else{
+        videos = allVideos;
+        if(currentCategory !== "الكل"){
+            videos = videos.filter(v =>
+                v.category === currentCategory
+            );
+        }
     }
 
     videos.forEach(v => {
@@ -149,9 +152,8 @@ function renderVideos(){
         container.innerHTML += `
         <div class="card">
 
-            <a
-              target="_blank"
-              href="https://youtube.com/watch?v=${v.videoId}">
+            <a target="_blank"
+               href="https://youtube.com/watch?v=${v.videoId}">
 
                 <img src="${v.thumbnail}">
             </a>

@@ -7,12 +7,12 @@ let currentCategory = "الكل";
 function getCategory(title){
 
     if(/أتمتة|المساعد|تطبيق|الويب|ويب|مساعد/i.test(title))
-        return "أدوات رايات الجديدة";
+        return "أدوات ذكية";
  
-    if(/مشكلة|مشاكل|حلول|حل/i.test(title))
+    if(/مشكلة|مشاكل|تعديل|حلول|حل/i.test(title))
         return "المشاكل والحلول";
 
-    if(/اكسل|Excel|asc|برنامج|استيراد|أكسل|إكسل|تصدير|ملف|برامج|معرف|المكون|مكون/i.test(title))
+    if(/اكسل|Excel|asc|برنامج|استيراد|أكسل|إكسل|تصدير|ملف|برامج|اختبار|المكون|مكون/i.test(title))
         return "البرامج المساعدة";
     
     if(/ورش|ورشة/i.test(title))

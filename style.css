@@ -5,29 +5,65 @@
 body{
     margin:0;
     font-family:'Cairo',sans-serif;
-    background:#F3F6F4;
+    background:#fafcfb;
 }
 
 .hero{
+    position: relative;
+    overflow: hidden;
+
     background: linear-gradient(
         135deg,
-        #006C35 0%,
-        #008C4A 50%,
-        #00A65A 100%
+        #f7fcf9 0%,
+        #eef9f2 45%,
+        #f9fcfa 100%
     );
 
-    color:white;
-    text-align:center;
-    padding:60px 20px;
+    color: #1d3b2a;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-180px;
+    right:-120px;
+
+    background:rgba(0,166,90,.08);
+    border-radius:50%;
+
+    filter:blur(90px);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    bottom:-120px;
+    left:-80px;
+
+    background:rgba(0,166,90,.05);
+    border-radius:50%;
+
+    filter:blur(80px);
 }
 
 .hero h1{
-    margin:0;
+    color:#006C35;
     font-size:42px;
+    font-weight:700;
 }
 
 .hero p{
-    opacity:.9;
+    color:#5c7062;
 }
 
 #searchInput{
@@ -101,4 +137,5 @@ main{
     background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.25);
     border-radius:12px;
+    max-Width: 240px;
 }

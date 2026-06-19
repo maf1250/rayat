@@ -99,16 +99,19 @@ function createButtons(){
 
     categories.forEach(category => {
 
-        container.innerHTML +=
-        `<button class="category-btn"
-            onclick="changeCategory('${category}')">
-            ${category}
-        </button>`;
+        container.innerHTML += `
+<button
+    class="category-btn ${category === currentCategory ? 'active' : ''}"
+    onclick="changeCategory('${category}')">
+    ${category}
+</button>`;
     });
 }
 
 function changeCategory(category){
     currentCategory = category;
+    document.getElementById("categoryButtons").innerHTML = "";
+    createButtons();
     renderVideos();
 }
 

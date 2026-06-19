@@ -168,3 +168,20 @@ document
 .addEventListener("input", renderVideos);
 
 loadVideos();
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    if (window.innerWidth > 768) return;
+
+    const currentScroll = window.pageYOffset;
+    const categories = document.getElementById("categoryButtons");
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        categories.classList.add("hide");
+    } else {
+        categories.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+});

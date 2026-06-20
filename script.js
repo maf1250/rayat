@@ -1,4 +1,4 @@
-const API_KEY = "YOUTUBE_API_KEY";
+const API_KEY = "AIzaSyBft7vPnq7X_81wcoZEzDi2N72hG6tb4J4";
 const PLAYLIST_ID = "PL_19reSn5s9k_mAIDve-CT4RzM2hHcD9L";
 
 let allVideos = [];

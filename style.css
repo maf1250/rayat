@@ -12,6 +12,7 @@ body{
     background:#F8FBFD;
     color:#1F2937;
 }
+.visitor-counter { text-align: center; display: flex; flex-direction: column; align-items: center; }
 
 .hero{
     position:relative;
